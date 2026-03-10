@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 140px;
+            color: #00eaff;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            background: #00eaff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #00bcd4;
+            transform: scale(1.1);
+        }
+
+        /* floating animation */
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px)
+            }
+
+            50% {
+                transform: translateY(-15px)
+            }
+
+            100% {
+                transform: translateY(0px)
+            }
+        }
+
+        /* background bubbles */
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: rise 10s infinite linear;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-1200px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>404</h1>
+
+        <h2>Oops! Page Not Found</h2>
+
+        <p>The page you are looking for doesn't exist or has been moved.</p>
+
+        <a href="/" class="btn">Go Back Home</a>
+
+    </div>
+
+    <script>
+
+        // create floating bubbles
+
+        for (let i = 0; i < 25; i++) {
+
+            let bubble = document.createElement("div")
+
+            bubble.classList.add("bubble")
+
+            bubble.style.left = Math.random() * 100 + "%"
+
+            bubble.style.width = bubble.style.height = (Math.random() * 60 + 20) + "px"
+
+            bubble.style.animationDuration = (Math.random() * 5 + 5) + "s"
+
+            document.body.appendChild(bubble)
+
+        }
+
+    </script>
+
+</body>
+
+</html>
