@@ -146,23 +146,84 @@
 
 
 //====== Error Handling Middleware ========//
-import express from 'express'
-const app = express()
+// import express from 'express'
+// const app = express()
 
-app.get('', (req, resp) => {
-    resp.send('Home Page')
-})
-app.get('/users', (req, resp) => {
-    resp.send1('Users Page')
-})
+// app.get('', (req, resp) => {
+//     resp.send('Home Page')
+// })
+// app.get('/users', (req, resp) => {
+//     resp.send1('Users Page')
+// })
 
-app.get('/error', (req, resp) => {
-    resp.send('Error Page')
-})
+// app.get('/error', (req, resp, next) => {
+//     const error = new Error('')
+//     error.status = 404
+//     next(error)
+//     resp.send('Error Page')
+// })
 
-function errorHandling(error, req, resp, next) {
-    resp.status(error.status || 500).sendFile('try after sometime')
-}
-app.use(errorHandling)
+// function errorHandling(error, req, resp, next) {
+//     resp.status(error.status || 500).sendFile('try after sometime')
+// }
+// app.use(errorHandling)
 
-app.listen(3200)
+// app.listen(3200)
+
+
+
+//====== TEmplete Enngine ========//
+// import express from 'express'
+// const app=express()
+// app.set('view engine','ejs')
+// app.get('/',(req,resp)=>{
+//   resp.render('addUser')
+// })
+// app.listen(3200)
+
+
+
+
+//====== Submit dara by EJS ========//
+// import express from 'express'
+// const app=express()
+
+
+// app.use(express.urlencoded({extended:false}))
+// app.set('view engine','ejs')
+// app.get('/add-user',(req,resp)=>{
+//     resp.render('addUser')
+// })
+
+// app.post('/submit-user',(req,resp)=>{
+//     // console.log(req.body);
+
+// resp.render('submitUser',req.body)
+// })
+
+// app.listen(3200)
+// import express from "express";
+// const app=express()
+
+// app.set('view engine','ejs')
+// app.use(express.urlencoded({extended:false}))
+// app.get('/add-user',(req,resp)=>{
+//     resp.render('addUser')
+// })
+
+// app.post('/submit-user',(req,resp)=>{
+//     resp.render('submitUser',req.body)
+// })
+// app.listen(3200)
+ 
+
+//====== Loops & Condition in EJS ========//
+// import express from 'express'
+// const app = express()
+// app.set('view engine', 'ejs')
+
+// app.get('/users', (req, resp) => {
+//     const users = ['Ahmad', 'Saeed', 'Waheed', 'Naveed']
+//     resp.render('users', { users :users,isLogin:false })
+// })
+// app.listen(3200)
